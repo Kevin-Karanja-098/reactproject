@@ -1,6 +1,6 @@
 //import * as React from "react";
 
-const List = [
+const list = [
   {
   title: 'React',
   url: 'https://reactjs.org/',
@@ -18,6 +18,35 @@ const List = [
   objectID: 1,
   },
   ];
+
+  function List() {
+    return (
+      <ul>
+        {list.map(function (item) {
+          return (
+            <li key={item.objectID}>
+              <span>
+                <a href={item.url}>{item.title}</a>
+              </span>
+              <span>{item.author}</span>
+              <span>{item.num_comments}</span>
+              <span>{item.points}</span>
+            </li>
+          );
+        })}
+    </ul>
+    );
+  }  
+
+  function Search() {
+    return(
+      <div>
+        <lebel htmlFor="search">Search:</lebel>
+        <input id="search" type="text" />
+      </div>
+    );
+  }  
+
 function App() {
   
   return(
@@ -35,13 +64,6 @@ function App() {
   )
 }
 
-function Search() {
-  return(
-    <div>
-      <lebel htmlFor="search">Search:</lebel>
-      <input id="search" type="text" />
-    </div>
-  );
-}
+
 
 export default App
