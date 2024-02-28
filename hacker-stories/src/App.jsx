@@ -38,11 +38,16 @@ const list = [
     );
   }  
 
-  function Search() {
+  const Search = () => {
+    const handleChange = (event) => {
+      console.log(event);
+      console.log(event.target.value);
+    };
+
     return(
       <div>
         <lebel htmlFor="search">Search:</lebel>
-        <input id="search" type="text" />
+        <input id="search" type="text" onChange={handleChange} />
       </div>
     );
   }  
