@@ -78,14 +78,18 @@ const App=() => {
     </li>
     )
 
-const Search = (prop) =>(
-    <div>
-      <lebel htmlFor="search">Search:</lebel>
-      <input id="search" type="text" value={prop.search}  onChange={prop.onSearch} />
-
-     
-    </div>
-  );
+const Search = ({ search, onSearch }) => [
+  <label key="1" htmlFor="search">
+    Search:{' '}
+  </label>,
+  <input
+    key="2"
+    id="search"
+    type="text"
+    value={search}
+    onChange={onSearch}
+  />,
+];
 
 
 
