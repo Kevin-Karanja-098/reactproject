@@ -27,6 +27,7 @@ const App=() => {
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
+    localStorage.setItem('search',event.target.value)
   };
 
   const searchedStories = stories.filter(function(story){
@@ -67,18 +68,14 @@ const App=() => {
     </li>
     )
 
-const Search = (prop) =>{
-  const {search, onSearch} = prop;
-
-  return(
+const Search = (prop) =>(
     <div>
       <lebel htmlFor="search">Search:</lebel>
-      <input id="search" type="text" value={search}  onChange={onSearch} />
+      <input id="search" type="text" value={prop.search}  onChange={prop.onSearch} />
 
      
     </div>
   );
-}
 
 
 
