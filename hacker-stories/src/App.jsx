@@ -23,7 +23,11 @@ const App=() => {
     },
   ]
 
-  const [searchTerm, setSearchTerm] = React.useState('React');
+  const [searchTerm, setSearchTerm] = React.useState(localStorage.getItem('search') ||'React');
+
+  React.useEffect(()=>{
+    localStorage.setItem('search',searchTerm)
+  })
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
